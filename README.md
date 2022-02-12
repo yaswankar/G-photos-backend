@@ -8,23 +8,24 @@ Backend service for G-photos
 
 You need to set up your development environment before you can do anything.
 
-Install [Node.js and NPM](https://nodejs.org/en/download/)
-
-- on OSX use [homebrew](http://brew.sh) `brew install node`
-- on Windows use [chocolatey](https://chocolatey.org/) `choco install nodejs`
-
-Install yarn globally (Optional)
-
-```bash
-npm install yarn -g
-```
 Install all dependencies
 
 ```bash
 npm install
+````
+### Step 2: Setting up collection
+
+Install MongoDB Compass 
+
+Create a mongo database (say g_photos) and inside that create a collection called ```images```
+
+
+### Step 3: Create an env file and place the below content
+```bash
+DATABASE_URL = mongodb://localhost:27017/g_photos
 ```
 
-### Step 2: Serve your App
+### Step 4: Serve your App
 
 Go to the project dir and start your app with this npm script.
 
@@ -34,3 +35,5 @@ npm run start
 
 > This starts a local server using `nodemon`, which will watch for any file changes and will restart the sever according to these changes.
 > The server address will be displayed to you as `http://localhost:3000`.
+
+
