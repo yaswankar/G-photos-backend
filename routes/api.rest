@@ -1,0 +1,14 @@
+### Get Photos
+GET http://localhost:3000/images
+
+### Get Trashed Photos
+GET http://localhost:3000/images/trashed
+
+### Get Favourite Photos
+GET http://localhost:3000/images?desc=favourite
+
+### Get Recent Photos
+GET http://localhost:3000/images?desc=recent
+
+### Delete Trashed Photo
+DELETE  http://localhost:3000/images/trashed?id=6206acaa74b9fc0264f56170
