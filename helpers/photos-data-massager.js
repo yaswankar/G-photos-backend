@@ -1,5 +1,12 @@
 const PhotoSchema = require('../models/photos');
 
+/**
+ * 
+ * @param {params} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns List of Images
+ */
 const getPhotosData = async(req, res, next) => {
     let photos;
     if(req.query.id) {
@@ -36,7 +43,13 @@ const getPhotosData = async(req, res, next) => {
     res.photos = photos;
     next();
 }
-
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ * @returns List of Trash Images
+ */
 const getTrashedPhotos = async(req, res, next) => {
     let photos;
     if(req.query.id) {
@@ -57,7 +70,10 @@ const getTrashedPhotos = async(req, res, next) => {
     res.photos = photos;
     next();
 }
-
+/**
+ * 
+ * @returns returns updated trash list
+ */
 const getTrash = async() => {
     const photos  = await PhotoSchema.find({trashed: true});
     return photos;

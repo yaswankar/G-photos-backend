@@ -1,10 +1,19 @@
 const { getTrash } = require('../helpers/photos-data-massager');
 const PhotoSchema = require('../models/photos');
 
+/**
+ * 
+ * @param {*} req 
+ * @param {Recieves the final list from massager function} res 
+ */
 const getPhotos = async(req, res) => { 
     res.send(res.photos);
 };
-
+/**
+ * 
+ * @param {description: String, location: String, createdAt: Number, favourite: Boolean, trashed: Boolean, size: Number} req 
+ * @param {*} res 
+ */
 const uploadPhoto = async(req, res) => {
     const newPhoto = new PhotoSchema({
         description: req.body.description ? req.body.description : "",
@@ -21,7 +30,11 @@ const uploadPhoto = async(req, res) => {
         res.status(400).json({message: error.message})
     }
 }
-
+/**
+ * 
+ * @param {description: String, favourite: Boolean, trashed: Boolean } req 
+ * @param {*} res 
+ */
 const updatePhotoData = async(req, res) => {
     res.photos.description = (req.body.description && req.body.description !== "") ? req.body.description : res.photosdescription;
     res.photos.favourite = req.body.favourite;
@@ -33,7 +46,11 @@ const updatePhotoData = async(req, res) => {
         res.status(500).json({message: error.message})
     }
 }
-
+/**
+ * 
+ * @param {*} req 
+ * @param { receives target object from massager function} res 
+ */
 const deletePhoto = async(req, res) => {
     try {
         await res.photos.remove();
