@@ -8,6 +8,8 @@ Backend service for G-photos
 
 You need to set up your development environment before you can do anything.
 
+Install node (v14.18.0) if not already available (using nvm)
+
 Install all dependencies
 
 ```bash
