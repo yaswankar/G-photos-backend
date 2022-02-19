@@ -1,0 +1,6 @@
+{
+    "GET_ACTIVE_PHOTOS" : {
+        "url":"http://localhost:3000/images",
+        "method": "GET"
+    }
+}

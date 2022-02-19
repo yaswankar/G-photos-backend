@@ -1,0 +1,13 @@
+type PhotoQuery {
+    activePhotos: [PhotosRef]
+    trashedPhotos: [PhotosRef]
+}
+
+type PhotosRef {
+    location: String
+    description: String!
+    createdAt: Int
+    favourite: Boolean
+    trashed: Boolean
+    size: Int
+}
