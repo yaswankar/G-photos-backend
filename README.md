@@ -19,7 +19,7 @@ npm install
 
 Install MongoDB Compass 
 
-Create a mongo database (say g_photos) and inside that create a collection called ```images```
+Create a mongo database (say g_photos) and inside that create a collection called ```images``` or run the docker-compose file (make sure the env file is set).
 
 
 ### Step 3: Create an env file and place the below content
