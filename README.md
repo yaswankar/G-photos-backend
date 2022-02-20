@@ -25,6 +25,7 @@ Create a mongo database (say g_photos) and inside that create a collection calle
 ### Step 3: Create an env file and place the below content
 ```bash
 DATABASE_URL = mongodb://localhost:27017/g_photos
+DATABASE_NAME = g_photos
 ```
 
 ### Step 4: Serve your App
