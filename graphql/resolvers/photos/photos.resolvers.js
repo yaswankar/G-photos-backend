@@ -1,14 +1,14 @@
-const { GraphQLErrorArgs } = require('graphql');
+const { GraphQLError } = require('graphql');
 const photoService = require('../../services/photos.js')
 
 async function getActivePhotos(parent, args, req) {
-    console.log('Into resolvers', req);
     try {
         const activePhotos = await photoService.getActivePhotos(req);
+        console.log('resp', {response: activePhotos.data.map(item => { return {createdAt: item.createdAt}})});
         return activePhotos;
     } catch (error) {
-        logger.error(__filename + ': Failed to get response for getActivePhotos, err=' + JSON.stringify(error));
-        return new GraphQLErrorArgs(JSON.stringify(error));
+        // logger.error(__filename + ': Failed to get response for getActivePhotos, err=' + JSON.stringify(error));
+        return new GraphQLError(JSON.stringify(error));
     }
 }
 
@@ -17,8 +17,8 @@ async function getTrashedPhotos(parent, args, req) {
         const trashedPhotos = await photoService.getTrashedPhotos(req);
         return trashedPhotos;
     } catch (error) {
-        logger.error(__filename + ': Failed to get response for getTrashedPhotos, err=' + JSON.stringify(error));
-        return new GraphQLErrorArgs(JSON.stringify(error));
+        // logger.error(__filename + ': Failed to get response for getTrashedPhotos, err=' + JSON.stringify(error));
+        return new GraphQLError(JSON.stringify(error));
     }
 }
 
