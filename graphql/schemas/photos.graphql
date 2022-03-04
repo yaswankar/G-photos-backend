@@ -5,8 +5,8 @@ type PhotoQuery {
 
 type PhotosRef {
     location: String
-    description: String!
-    createdAt: Int
+    description: String
+    createdAt: Float
     favourite: Boolean
     trashed: Boolean
     size: Int
